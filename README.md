@@ -4,9 +4,9 @@ A project for match betting analysis and automation.
 
 ## Description
 
-This repository contains code for finding the lay stakes when creating a bet-builder with multiple outcomes. It will find the lay stakes that give the maximum "locked-in" profit^1. 
+This repository contains code for finding the lay stakes when creating a bet-builder with multiple outcomes. It will find the lay stakes that give the maximum "locked-in" profit[^1]. 
 
-^1 locked-in profit is the profit returned when the outcome with the lowest profit from your options occurs. For example, if I'll get £2.50 for a 1-0 win, £2.40 for 2-0 or £4.00 if the back loses then the locked-in profit is £2.40. 
+[^1] locked-in profit is the profit returned when the outcome with the lowest profit from your options occurs. For example, if I'll get £2.50 for a 1-0 win, £2.40 for 2-0 or £4.00 if the back loses then the locked-in profit is £2.40. 
 ## Installation
 
 ```bash
