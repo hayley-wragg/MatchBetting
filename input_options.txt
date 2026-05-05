@@ -1,0 +1,12 @@
+# Input score options- Names for each score i.e 2-1, 3-0 etc.
+score_names = ['2-1', '3-0']
+# Input the lay odds for the score options.
+score_odds = [11, 14.5]
+# Input bet builder odds
+bb_odds = 4.2
+# Input bet builder stakes
+bb_stake = 10
+# Free bet stake - default is the bb_stake
+free_bet_stake = default
+# Input percentage return from free bet - default is 80%, 60% is better for bb-bets
+free_bet_percentage_return = 0.8

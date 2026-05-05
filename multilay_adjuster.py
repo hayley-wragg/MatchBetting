@@ -1,26 +1,23 @@
 # This script takes a set of outcomes corresponding to a bet builder. It calculates the lay stakes which 
 # would even the profits in all outcomes. 
 
-# Input score options- Names for each score i.e 2-1, 3-0 etc.
-score_names = ['2-1', '3-0']
-# Input score odds
-score_odds = [11, 14.5]
-# Input bet builder odds
-bb_odds = 4.2
-# Input bet builder stakes
-bb_stake = 10
-# Free bet stake - default is the bb_stake
-free_bet_stake = bb_stake
-# Input percentage return from free bet - default is 80%, 60% is better for bb-bets
-free_bet_percentage_return = 0.8
-
 import random
 from itertools import product
 import numpy as np
 
-# Starting guess for lay stakes
-lay_0 = bb_stake
-lay_stakes = [lay_0] * len(score_names)
+# Load input options from input_options.txt
+with open('input_options.txt', 'r') as f:
+    lines = f.readlines()
+    score_names = eval(lines[1].split('=')[1].strip())
+    score_odds = eval(lines[3].split('=')[1].strip())
+    bb_odds = float(lines[5].split('=')[1].strip())
+    bb_stake = float(lines[7].split('=')[1].strip())
+    free_bet_percentage_return = float(lines[11].split('=')[1].strip())
+    # If the free bet stake is not specified or not a valid number, default to bb_stake
+    try:
+        free_bet_stake = float(lines[9].split('=')[1].strip())
+    except (IndexError, ValueError):
+        free_bet_stake = bb_stake
 
 # Function calculating the winnings for each outcome
 def winnings(score_odds, bb_odds, bb_stake, lay_stakes, free_bet_stake=bb_stake, free_bet_percentage_return=0.8):
